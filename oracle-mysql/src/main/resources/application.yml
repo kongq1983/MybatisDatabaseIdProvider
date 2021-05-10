@@ -1,0 +1,22 @@
+
+spring:
+  profiles:
+    active: mysql
+#    active: oracle
+  application:
+      name: jr
+
+server:
+  port: 10010
+  servlet:
+    context-path: /jr
+
+
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+    # 两边一致可以不配置 也就是编译后，在classpath下面的同个目录
+#  mapper-locations:
+#    - classpath*:com/kq/mybatis/mapper/*.xml

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kq.dababaseid.mapper.ex.UserExMapper">
+
+    <select id="getAccount" resultType="String">
+        select yhzh from s_user where userid=#{userId}
+    </select>
+
+    <select id="getAccountByDataBase" resultType="String">
+        select 'common:'||yhzh from s_user where userid=#{userId}
+    </select>
+
+    <select id="getAccountByDataBase" resultType="String" databaseId="oracle">
+        select 'oracle:'||yhzh from s_user where userid=#{userId}
+    </select>
+
+    <select id="getAccountByDataBase" resultType="String" databaseId="mysql">
+        select CONCAT('mysql',':',yhzh)yhzh from s_user where userid=#{userId}
+    </select>
+
+
+</mapper>
